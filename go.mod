@@ -1,4 +1,4 @@
-module dsn
+module github.com/simonward87/dsn
 
 go 1.24.3
 
