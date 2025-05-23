@@ -29,13 +29,14 @@ func TestSQLite(t *testing.T) {
 			},
 		},
 		{
-			expect: "file:api.sqlite3?_auth&_auth_crypt=SSHA256&_auth_pass=ryxdd69aP9gy&_auth_salt=TpSI7DCaOjyfMC2GL0VLmYSW&_auth_user=sqlite_user_123&_busy_timeout=10000&_foreign_keys=true&_journal_mode=WAL",
+			expect: "file:api.sqlite3?_auth&_auth_crypt=SSHA256&_auth_pass=ryxdd69aP9gy&_auth_salt=TpSI7DCaOjyfMC2GL0VLmYSW&_auth_user=sqlite_user_123&_busy_timeout=10000&_foreign_keys=true&_journal_mode=WAL&_synchronous=NORMAL",
 			file:   "api.sqlite3",
 			name:   "WithAuth",
 			opts: dsn.Options{
 				BusyTimeout: 10_000,
 				ForeignKeys: true,
 				JournalMode: dsn.JournalModeWal,
+				Synchronous: dsn.SynchronousNormal,
 				UACrypt:     dsn.UACryptSSHA256,
 				UAPassword:  "ryxdd69aP9gy",
 				UASalt:      "TpSI7DCaOjyfMC2GL0VLmYSW",
