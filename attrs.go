@@ -1,3 +1,6 @@
+// package dsn contains convenience functions for generating connection strings
+// for github.com/mattn/go-sqlite3
+//
 // Copyright (C) 2025 Simon Ward <39803787+simonward87@users.noreply.github.com>.
 //
 // Use of this source code is governed by an MIT-style

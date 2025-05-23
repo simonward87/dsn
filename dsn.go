@@ -1,3 +1,6 @@
+// package dsn contains convenience functions for generating connection strings
+// for github.com/mattn/go-sqlite3
+//
 // Copyright (C) 2025 Simon Ward <39803787+simonward87@users.noreply.github.com>.
 //
 // Use of this source code is governed by an MIT-style
@@ -12,8 +15,8 @@ import (
 	"github.com/google/go-querystring/query"
 )
 
-// SQLite generates a valid dsn string for mattn/go-sqlite3 driver, using a
-// file name and an Options object.
+// SQLite generates and returns a connection string for mattn/go-sqlite3
+// driver, using a file name and an Options object.
 func SQLite(file string, opts Options) string {
 	if file == "" {
 		return ""
@@ -28,8 +31,8 @@ func SQLite(file string, opts Options) string {
 	return fmt.Sprintf("file:%s?%s", file, o)
 }
 
-// Options represents all currently available options when creating a
-// connection string for mattn/go-sqlite3.
+// Options represents all currently available options when generating a
+// connection string with function SQLite.
 type Options struct {
 	AutoVacuum             AutoVaccuum      `url:"_auto_vacuum,omitempty"`
 	BusyTimeout            int              `url:"_busy_timeout,omitempty"`
